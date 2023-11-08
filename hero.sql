@@ -173,3 +173,10 @@ VALUES
         FROM Class
         WHERE class_description LIKE '&Archer%'
     );
+
+SELECT Class.class_description, AVG(Player.player_level) AS avg_level
+    FROM Player
+    JOIN Hero ON Player.player_id = Hero.player_id
+    JOIN Class ON Hero.class_id = Class.class_id
+    GROUP BY Class.class_description
+    ORDER BY avg_level DESC;
