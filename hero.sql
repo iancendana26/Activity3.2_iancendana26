@@ -160,3 +160,8 @@ VALUES
     
     DELETE FROM Item 
     WHERE hero_id = 1;
+
+    SELECT p.player_name, h.hero_name
+    FROM Player p
+    JOIN Hero h ON p.hero_id = h.hero_id
+    WHERE p.player_experience > 0;
